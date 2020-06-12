@@ -19,12 +19,15 @@ static int escribir_archivo(struct seq_file * archivo, void *v) {
     long memoriaTotal 	= (estructuraInfoSist.totalram * 4);
     long memoriaLibre 	= (estructuraInfoSist.freeram * 4 );
 
-    seq_printf(archivo, "CARNETS:     201020975      &     201212623       \n");
-    seq_printf(archivo, "NOMBRES: Ottoniel Guarchaj  &   Kenia Zepeda      \n");
-    seq_printf(archivo, "MEMORIA TOTAL:  %8lu KB - %8lu MB\n",memoriaTotal, memoriaTotal / 1024);
-    seq_printf(archivo, "MEMORIA LIBRE: :  %8lu KB - %8lu MB \n", memoriaLibre, memoriaLibre / 1024);
-    seq_printf(archivo, "PORCENTAJE MEMORIA UTILIZADA:  %i %%\n", (memoriaLibre * 100)/memoriaTotal) ;
-
+    seq_printf(archivo, "***************************************************\n");
+    seq_printf(archivo, "*  CARNETS:     201020975      &     201212623    *\n");
+    seq_printf(archivo, "*  NOMBRES: Ottoniel Guarchaj  &   Kenia Zepeda   *\n");
+    seq_printf(archivo, "***************************************************\n");
+    seq_printf(archivo, " MEMORIA TOTAL:  %8lu KB - %8lu MB\n",memoriaTotal, memoriaTotal / 1024);
+    seq_printf(archivo, " MEMORIA LIBRE: :  %8lu KB - %8lu MB \n", memoriaLibre, memoriaLibre / 1024);
+    seq_printf(archivo, " PORCENTAJE MEMORIA UTILIZADA:  %i %%\n", (memoriaLibre * 100)/memoriaTotal) ;
+    seq_printf(archivo, "***************************************************\n");
+    seq_printf(archivo, "***************************************************\n\n");
     return 0;
 }
 

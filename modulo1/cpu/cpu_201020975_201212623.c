@@ -20,8 +20,10 @@ struct list_head *list;
 
 static int escribir_archivo(struct seq_file * archivo, void *v) {       
 
-        seq_printf(archivo, "CARNETS:     201020975      &     201212623       \n");
-        seq_printf(archivo, "NOMBRES: Ottoniel Guarchaj  &   Kenia Zepeda      \n");
+		seq_printf(archivo, "*******************************************************\n");
+        seq_printf(archivo, "*    CARNETS:     201020975       &     201212623     *\n");
+        seq_printf(archivo, "*    NOMBRES:  Ottoniel Guarchaj  &   Kenia Zepeda    *\n");
+        seq_printf(archivo, "*******************************************************\n");
 
         seq_printf(archivo, "PID \t NAME \t STATE \t CHILDS \n");
         for_each_process(task_list) {
@@ -33,6 +35,8 @@ static int escribir_archivo(struct seq_file * archivo, void *v) {
                 }
                 seq_printf(archivo, "\n");
         }
+        seq_printf(archivo, "*******************************************************\n");
+        seq_printf(archivo, "*******************************************************\n\n");
 
         return 0;
 }
