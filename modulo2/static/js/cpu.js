@@ -4,11 +4,12 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 $(document).ready(function() {
 
-    let memInfo = null;
+    let cpuInfo = null;
+    let consumo = [];
     let contador = 0;
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    var chartHtml = document.getElementById("myChartRam").getContext("2d");
+    var chartHtml = document.getElementById("myChartCpu").getContext("2d");
 
 
     var chartConfig = {
@@ -19,7 +20,7 @@ $(document).ready(function() {
         scaleStartValue : 0,
         datasets: [
             {
-                label: "RAM",
+                label: "CPU %",
                 lineTension: 0.3,
                 backgroundColor: "rgba(2,117,216,0.2)",
                 borderColor: "rgba(2,117,216,1)",
@@ -64,7 +65,7 @@ $(document).ready(function() {
         legend: {
             display: false
         }
-
+    
     };
 
 
@@ -79,21 +80,22 @@ $(document).ready(function() {
         headers
     };
 
+    getCPUInfoInit();
 
+    setTimeout(function(){
 
-    getRamInfoInit()
     setInterval(function(){
-        getRamInfo();
-    }, 5000);
+        getCPUInfo();
+    }, 5000); }, 3000);
 
 
 
-    function getRamInfo(){
+    function getCPUInfo(){
 
-        fetch('http://localhost:8080/memoria', init)
+        fetch('http://localhost:8080/cpuPorcentaje', init)
             .then(response => response.json())
             .then(data => {
-                memInfo = data
+                cpuInfo = data
                 // text is the response body
             })
             .catch((e) => {
@@ -101,15 +103,15 @@ $(document).ready(function() {
             });
 
         contador++;
-        addData(contador, memInfo.porcentaje)
+        addData(contador, cpuInfo.porcentaje)
     }
 
-    function getRamInfoInit(){
+    function getCPUInfoInit(){
 
-        fetch('http://localhost:8080/memoria', init)
+        fetch('http://localhost:8080/cpuPorcentaje', init)
             .then(response => response.json())
             .then(data => {
-                memInfo = data
+                cpuInfo = data
                 // text is the response body
             })
             .catch((e) => {
@@ -117,7 +119,7 @@ $(document).ready(function() {
             });
 
         contador++;
-        setTimeout(function(){ addData(contador, memInfo.porcentaje) }, 1000);
+        setTimeout(function(){ addData(contador, cpuInfo.porcentaje) }, 5000);
     }
 
 

@@ -122,7 +122,7 @@ func getMemInfo(w http.ResponseWriter, r *http.Request) {
 func getCpuInfo(w http.ResponseWriter, r *http.Request) {
 	var prevIdleTime, prevTotalTime uint64
 	var cpuUsage = 0.0
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 4; i++ {
 		file, err := os.Open("/proc/stat")
 		if err != nil {
 			log.Fatal(err)
