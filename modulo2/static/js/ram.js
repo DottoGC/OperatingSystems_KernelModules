@@ -14,9 +14,13 @@ $(document).ready(function() {
 
     var chartConfig = {
         labels: [],
+        scaleOverride : true,
+        scaleSteps : 10,
+        scaleStepWidth : 100,
+        scaleStartValue : 0,
         datasets: [
             {
-                label: "Sessions",
+                label: "RAM",
                 lineTension: 0.3,
                 backgroundColor: "rgba(2,117,216,0.2)",
                 borderColor: "rgba(2,117,216,1)",
@@ -29,20 +33,39 @@ $(document).ready(function() {
                 pointBorderWidth: 2,
                 data: [],
             }
-        ]
+        ],
+
+
     };
 
     var options = {
-        animation: false,
-        //Boolean - If we want to override with a hard coded scale
-        scaleOverride: true,
-        //** Required if scaleOverride is true **
-        //Number - The number of steps in a hard coded scale
-        scaleSteps: 10,
-        //Number - The value jump in the hard coded scale
-        scaleStepWidth: 10,
-        //Number - The scale starting value
-        scaleStartValue: 0
+        scales: {
+            xAxes: [{
+                time: {
+                    unit: 'Second'
+                },
+                gridLines: {
+                    display: true
+                },
+                ticks: {
+                    maxTicksLimit: 10
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: 100,
+                    maxTicksLimit: 10
+                },
+                gridLines: {
+                    color: "rgba(0, 0, 0, .125)",
+                }
+            }],
+        },
+        legend: {
+            display: false
+        }
+    
     };
 
 
@@ -76,7 +99,7 @@ $(document).ready(function() {
             });
 
         contador++;
-        addData(contador, memInfo.consumo)
+        addData(contador, memInfo.porcentaje)
     }
 
     function addData(label, data) {
