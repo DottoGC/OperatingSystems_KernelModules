@@ -45,16 +45,17 @@ $(document).ready(function() {
                 },
                 gridLines: {
                     display: true
-                },
+                }/*,
                 ticks: {
                     maxTicksLimit: 10
-                }
+
+                }*/
             }],
             yAxes: [{
                 ticks: {
-                    min: 0,
+                    min: 60,
                     max: 100,
-                    maxTicksLimit: 10
+                    stepSize: 5
                 },
                 gridLines: {
                     color: "rgba(0, 0, 0, .125)",
@@ -80,12 +81,14 @@ $(document).ready(function() {
     };
 
 
+    $('#overlayRam').fadeOut(3000,function(){
+        $('#divRam').fadeIn(2000);
+    });
 
-    getRamInfoInit()
+
     setInterval(function(){
         getRamInfo();
     }, 5000);
-
 
 
     function getRamInfo(){
@@ -100,25 +103,21 @@ $(document).ready(function() {
                 console.log("ERROR: " + e.toString());
             });
 
-        contador++;
-        addData(contador, memInfo.porcentaje)
+
+        setTimeout(function(){
+
+            var cardProcs = document.getElementById("cardRam");
+            cardProcs.innerHTML =
+                " <br>Total de RAM: "+ memInfo.total +"</br>" +
+                " <br>RAM Consumida: "+ memInfo.libre +"</br>" +
+                " <br>RAM Libre: "+ memInfo.consumo +"</br>" +
+                " <br>Porcentaje: "+ memInfo.porcentaje +"</br>" ;
+            contador++;
+            addData(contador, memInfo.porcentaje)
+        }, 5000);
     }
 
-    function getRamInfoInit(){
 
-        fetch('http://localhost:8080/memoria', init)
-            .then(response => response.json())
-            .then(data => {
-                memInfo = data
-                // text is the response body
-            })
-            .catch((e) => {
-                console.log("ERROR: " + e.toString());
-            });
-
-        contador++;
-        setTimeout(function(){ addData(contador, memInfo.porcentaje) }, 1000);
-    }
 
 
     function addData(label, data) {

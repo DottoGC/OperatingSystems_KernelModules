@@ -12,8 +12,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="/static/index.html">Start Bootstrap</a><button
+            <a class="navbar-brand" href="/static/index.html">Sistemas Operativos 1</a><button
                 class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
                     class="fas fa-bars"></i></button>   
         </nav>
@@ -41,6 +42,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 PROCESOS
                             </a>
+
+                            <a class="nav-link" href="/static/procesosArbol.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                PROCESOS E HIJOS
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -52,23 +58,38 @@
     
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid">
+                    <div id="overlayProcs" style="margin: 20px">
+                        <img src="http://cdn.nirmaltv.com/images/generatorphp-thumb.gif" alt="Wait" alt="Loading" />
+                        <div id="overlayText" style="color:black;">
+                            Wait
+                            Loading
+                        </div>
+                    </div>
+
+
+                    <div class="container-fluid" id="divProcs" style="display:none">
                         <h1 class="mt-4">Procesos</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Procesos</li>
                         </ol>
+
+                        <div class="card mb-4">
+                            <div class="card-body" id="cardProcesos"> </div>
+                        </div>
                     
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Processes</div>
                             <div class="card-body">
-                                <div class="table-responsive" id="divTable">
+                                <div class="table-responsive" >
                                     <table class="table table-bordered" id="dataTableProcs" width="100%" cellspacing="0" >
                                         <thead>
                                                 <th>Pid</th>
                                                 <th>Nombre</th>
+                                                <th>Usuario</th>
                                                 <th>Estado</th>
                                                 <th>Porcentaje</th>
+                                                <th>Kill</th>
                                         </thead>
 
 
@@ -97,8 +118,7 @@
         <script src="js/scripts.js"></script>
         <script src="js/procesos.js"></script>
 
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/datatables-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     </body>
 </html>

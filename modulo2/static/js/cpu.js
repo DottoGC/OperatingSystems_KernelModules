@@ -46,10 +46,10 @@ $(document).ready(function() {
                 },
                 gridLines: {
                     display: true
-                },
+                }/*,
                 ticks: {
                     maxTicksLimit: 10
-                }
+                }*/
             }],
             yAxes: [{
                 ticks: {
@@ -80,13 +80,15 @@ $(document).ready(function() {
         headers
     };
 
-    getCPUInfoInit();
+    $('#overlayCpu').fadeOut(3000,function(){
+        $('#divCpu').fadeIn(2000);
+    });
 
-    setTimeout(function(){
+
 
     setInterval(function(){
         getCPUInfo();
-    }, 5000); }, 3000);
+    }, 5000);
 
 
 
@@ -102,25 +104,20 @@ $(document).ready(function() {
                 console.log("ERROR: " + e.toString());
             });
 
-        contador++;
-        addData(contador, cpuInfo.porcentaje)
+
+        setTimeout(function(){
+
+            var cardProcs = document.getElementById("cardCpu");
+            cardProcs.innerHTML =
+                " <br>Porcentaje CPU: "+ cpuInfo.porcentaje +"</br>" ;
+
+            contador++;
+            addData(contador, cpuInfo.porcentaje)
+        }, 5000);
+
     }
 
-    function getCPUInfoInit(){
 
-        fetch('http://localhost:8080/cpuPorcentaje', init)
-            .then(response => response.json())
-            .then(data => {
-                cpuInfo = data
-                // text is the response body
-            })
-            .catch((e) => {
-                console.log("ERROR: " + e.toString());
-            });
-
-        contador++;
-        setTimeout(function(){ addData(contador, cpuInfo.porcentaje) }, 5000);
-    }
 
 
     function addData(label, data) {

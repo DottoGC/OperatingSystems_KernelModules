@@ -12,7 +12,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="/static/index.html">Sistemas Operativos</a><button
+            <a class="navbar-brand" href="/static/index.html">Sistemas Operativos 1</a><button
                 class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
                     class="fas fa-bars"></i></button>   
         </nav>
@@ -40,6 +40,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 PROCESOS
                             </a>
+
+                            <a class="nav-link" href="/static/procesosArbol.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                PROCESOS E HIJOS
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -51,12 +56,24 @@
     
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid">
+                    <div id="overlayRam" style="margin: 20px">
+                        <img src="http://cdn.nirmaltv.com/images/generatorphp-thumb.gif" alt="Wait" alt="Loading" />
+                        <div id="overlayText" style="color:black;">
+                            Wait
+                            Loading
+                        </div>
+                    </div>
+
+                    <div class="container-fluid" id="divRam" style="display:none">
                         <h1 class="mt-4">RAM</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">RAM</li>
                         </ol>
+
+                        <div class="card mb-4">
+                            <div class="card-body" id="cardRam"> </div>
+                        </div>
                    
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Line Chart RAM</div>
