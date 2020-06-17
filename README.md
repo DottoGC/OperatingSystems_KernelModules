@@ -49,9 +49,11 @@ Características a implementar:
 # Modulo2
 ## APPLICACION WEB - MONITOR DE RECURSOS LINUX - GOLANG
 
+Requiere Golang 1.14
 
 #Build Go webapp and start the server
 
+   cd /SO1P1/modulo2
    go run main.go
 
 #Host
