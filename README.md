@@ -47,7 +47,15 @@ Características a implementar:
 
 
 # Modulo2
-## APPLICACION WEB
+## APPLICACION WEB - MONITOR DE RECURSOS LINUX - GOLANG
+
+
+#Build Go webapp and start the server
+   go run main.go
+
+#Host
+   localhost:8080
+
 La aplicación web permite visualizar gráficas dinámicas que muestren el uso del CPU y de la memoria RAM del servidor. 
 La aplicación web permite mostrará la información básica de los procesos que se ejecutan y permite terminar los procesos(kill) que se encuentran en ejecución.
 
@@ -60,7 +68,6 @@ La gráfica debe ser similar a un polígono de frecuencia, el cual debe mostrar 
 
 Monitor de RAM 
 El monitor de memoria RAM es similar al de CPU, debe mostrar la información del consumo de RAM del servidor.
-
 
 # Requisitos/Tecnologias
 - Ubuntu 18.04
