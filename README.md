@@ -49,16 +49,14 @@ Características a implementar:
 # Modulo2
 ## APPLICACION WEB - MONITOR DE RECURSOS LINUX - GOLANG
 
-Requiere Golang 1.14
+Requiere Golang 1.14  
 
-#Build Go webapp and start the server
+#Build Go webapp and start the server  
+   cd /SO1P1/modulo2    
+   go run main.go  
 
-   cd /SO1P1/modulo2
-   go run main.go
-
-#Host
-
-   localhost:8080
+#Host  
+   localhost:8080  
 
 La aplicación web permite visualizar gráficas dinámicas que muestren el uso del CPU y de la memoria RAM del servidor. 
 La aplicación web permite mostrará la información básica de los procesos que se ejecutan y permite terminar los procesos(kill) que se encuentran en ejecución.
