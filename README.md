@@ -52,11 +52,11 @@ Características a implementar:
 Requiere Golang 1.14  
 
 #Build Go webapp and start the server  
-   cd /SO1P1/modulo2    
-   go run main.go  
+<pre>  cd /SO1P1/modulo2</pre>      
+<pre>  go run main.go </pre>  
 
 #Host  
-   localhost:8080  
+<pre>  localhost:8080</pre>   
 
 La aplicación web permite visualizar gráficas dinámicas que muestren el uso del CPU y de la memoria RAM del servidor. 
 La aplicación web permite mostrará la información básica de los procesos que se ejecutan y permite terminar los procesos(kill) que se encuentran en ejecución.
