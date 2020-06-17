@@ -51,9 +51,11 @@ Características a implementar:
 
 
 #Build Go webapp and start the server
+
    go run main.go
 
 #Host
+
    localhost:8080
 
 La aplicación web permite visualizar gráficas dinámicas que muestren el uso del CPU y de la memoria RAM del servidor. 
