@@ -55,7 +55,7 @@ Requiere Golang 1.14
 <pre>  cd /SO1P1/modulo2</pre>      
 <pre>  go run main.go </pre>  
 
-#Host  
+#Host and port  
 <pre>  localhost:8080</pre>   
 
 La aplicación web permite visualizar gráficas dinámicas que muestren el uso del CPU y de la memoria RAM del servidor. 
