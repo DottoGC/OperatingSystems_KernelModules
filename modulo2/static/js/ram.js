@@ -81,18 +81,17 @@ $(document).ready(function() {
     };
 
 
-    $('#overlayRam').fadeOut(3000,function(){
-        $('#divRam').fadeIn(2000);
+    $('#overlayRam').fadeOut(5000,function(){
+        $('#divRam').fadeIn(1000);
     });
 
-
+    getRamInfo();
     setInterval(function(){
         getRamInfo();
     }, 5000);
 
 
     function getRamInfo(){
-
         fetch('http://localhost:8080/memoria', init)
             .then(response => response.json())
             .then(data => {
@@ -108,10 +107,10 @@ $(document).ready(function() {
 
             var cardProcs = document.getElementById("cardRam");
             cardProcs.innerHTML =
-                " <br>Total de RAM: "+ memInfo.total +"</br>" +
-                " <br>RAM Consumida: "+ memInfo.libre +"</br>" +
-                " <br>RAM Libre: "+ memInfo.consumo +"</br>" +
-                " <br>Porcentaje: "+ memInfo.porcentaje +"</br>" ;
+                " <br>Total de RAM: "+ memInfo.total +" MB</br>" +
+                " <br>RAM Consumida: "+ memInfo.libre +" MB</br>" +
+                " <br>RAM Libre: "+ memInfo.consumo +" MB</br>" +
+                " <br>Porcentaje: "+ memInfo.porcentaje +" MB</br>" ;
             contador++;
             addData(contador, memInfo.porcentaje)
         }, 5000);

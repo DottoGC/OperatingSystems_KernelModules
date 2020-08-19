@@ -52,7 +52,6 @@ type ProcsWithChildsStruct struct {
 	Hijos []ProcsWithChildsStruct `json:"_children"`
 }
 
-
 type ramStruct struct {
 	Total      float64 `json:"total"`
 	Libre      float64  `json:"libre"`
@@ -246,7 +245,7 @@ func getProcInfo(w http.ResponseWriter, r *http.Request){
 	w.Write([]byte(jsonResponse))
 }
 
-func getProcs() []ProcStruct {
+ efunc getProcs() []ProcStruct {
 	var linuxProcesses []ProcStruct
 	files, err := ioutil.ReadDir("/proc")
 	if err != nil {
@@ -328,7 +327,7 @@ func getProcessInfo(pid string, content string) ProcStruct {
 				var porcentaje = (ramMb / 7862)*100
 				porcent = fmt.Sprintf("%.2f", porcentaje)*/
 
-				porcent = GetPorcentajeRAM(pid)
+				porcent = getPorcentajeRam(pid)
 				break
 			}
 
@@ -339,7 +338,7 @@ func getProcessInfo(pid string, content string) ProcStruct {
 	}
 
 
-	return ProcStruct{pid, nombre, GetNombreUsuario(uid), GetStatus(estado),porcent, "<button>RIP X_X</button>"};
+	return ProcStruct{pid, nombre, GetNombreUsuario(uid), getEstado(estado),porcent, "<button>RIP X_X</button>"};
 }
 
 
@@ -432,12 +431,12 @@ func getProccesTree(w http.ResponseWriter, r *http.Request){
 
 		var nuevoArray []ProcsWithChildsStruct
 		raiz = ProcsWithChildsStruct{
-			Pid: PidNum,
-			Nombre: Nombre_,
-			Estado: GetStatus(Estado_),
+			Pid:     PidNum,
+			Nombre:  Nombre_,
+			Estado:  getEstado(Estado_),
 			Usuario: GetNombreUsuario(Uid_),
-			Ppid: PpidNum,
-			Hijos: nuevoArray,
+			Ppid:    PpidNum,
+			Hijos:   nuevoArray,
 		}
 
 		arreglo = append(arreglo, raiz)
@@ -528,9 +527,9 @@ func GetNombreUsuario(uid string) string {
 	return usuario
 }
 
-func GetStatus(caracter string) string{
+func getEstado(caracter string) string{
 	if strings.Contains(caracter, "R") {
-		contRun++
+		//contRun++
 		return "Running"
 	} else if strings.Contains(caracter, "S") {
 		contSleep++
@@ -555,7 +554,7 @@ func GetStatus(caracter string) string{
 }
 
 
-func GetPorcentajeRAM(uid string) string {
+func getPorcentajeRam(uid string) string {
 	var porcentaje string
 	// comando := "{if($2 == " + uid + ") print $2, $4}"
 	// cmd, error := exec.Command("ps", "aux", "|", "awk", comando).Output()

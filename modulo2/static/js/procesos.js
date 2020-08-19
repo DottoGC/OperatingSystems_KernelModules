@@ -14,8 +14,8 @@ $(document).ready(function() {
         method: 'GET',
     };
 
-    $('#overlayProcs').fadeOut(3000,function(){
-        $('#divProcs').fadeIn(2000);
+    $('#overlayProcs').fadeOut(5000,function(){
+        $('#divProcs').fadeIn(1000);
     });
 
     getProcsInfo();
@@ -25,11 +25,11 @@ $(document).ready(function() {
 
 
         var cardProcs = document.getElementById("cardProcesos");
-        cardProcs.innerHTML = "<br> Procesos en ejecución: "+ procInfo.Ejecucion +"</br>" +
-            " <br>Procesos suspendidos: "+ procInfo.Suspendidos +"</br>" +
-            " <br>Procesos detenidos: "+ procInfo.Detenidos +"</br>" +
-            " <br>Procesos Zombie: "+ procInfo.Zombie +"</br>" +
-            " <br>Total de procesos: "+ procInfo.Total +"</br>" ;
+        cardProcs.innerHTML = "<br> Procesos en ejecución: "+ procInfo.Ejecucion +" MB</br>" +
+            " <br>Procesos suspendidos: "+ procInfo.Suspendidos +" MB</br>" +
+            " <br>Procesos detenidos: "+ procInfo.Detenidos +" MB</br>" +
+            " <br>Procesos Zombie: "+ procInfo.Zombie +" MB</br>" +
+            " <br>Total de procesos: "+ procInfo.Total +" MB</br>" ;
 
         table = $('#dataTableProcs');
 
@@ -63,11 +63,7 @@ $(document).ready(function() {
             alert( "RIP proceso: " +data.Nombre);
         } );
 
-    }, 8000);
-
-
-
-
+    }, 6000);
 
     function getProcsInfo(){
 

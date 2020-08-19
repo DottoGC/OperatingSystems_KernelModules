@@ -39,6 +39,7 @@ $(document).ready(function() {
     };
 
     var options = {
+
         scales: {
             xAxes: [{
                 time: {
@@ -62,6 +63,7 @@ $(document).ready(function() {
                 }
             }],
         },
+
         legend: {
             display: false
         }
@@ -80,20 +82,17 @@ $(document).ready(function() {
         headers
     };
 
-    $('#overlayCpu').fadeOut(3000,function(){
-        $('#divCpu').fadeIn(2000);
+    $('#overlayCpu').fadeOut(5000,function(){
+        $('#divCpu').fadeIn(1000);
     });
 
 
-
+    getCPUInfo();
     setInterval(function(){
         getCPUInfo();
     }, 5000);
 
-
-
     function getCPUInfo(){
-
         fetch('http://localhost:8080/cpuPorcentaje', init)
             .then(response => response.json())
             .then(data => {
@@ -106,19 +105,15 @@ $(document).ready(function() {
 
 
         setTimeout(function(){
-
             var cardProcs = document.getElementById("cardCpu");
             cardProcs.innerHTML =
-                " <br>Porcentaje CPU: "+ cpuInfo.porcentaje +"</br>" ;
+                " <br>Porcentaje CPU: "+ cpuInfo.porcentaje +" MB</br>" ;
 
             contador++;
             addData(contador, cpuInfo.porcentaje)
         }, 5000);
 
     }
-
-
-
 
     function addData(label, data) {
         myLineChart.data.labels.push(label);
