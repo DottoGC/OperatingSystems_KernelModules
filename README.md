@@ -1,9 +1,3 @@
-### Proyecto 1 - MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
-#### Sistemas Operativos 1
-#### Escuela de Vacaciones de Junio 2020
-#### Facultad de Ingenieria, Universidad de San Carlos de Guatemala
-
-
 # MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
 Descripcion:
 Se trata de desarrollar una aplicación que permita monitorear y gestionar los procesos de un servidor Linux, por medio de una interfaz web de fácil acceso desde el navegador de una computadora o de un dispositivo móvil como teléfono o Tablet. 
@@ -73,3 +67,10 @@ El monitor de memoria RAM es similar al de CPU, debe mostrar la información del
 # Requisitos/Tecnologias
 - Ubuntu 18.04
 - Golang (Go)
+
+
+
+#### Proyecto 1 - MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
+#### Sistemas Operativos 1
+#### Escuela de Vacaciones de Junio 2020
+#### Facultad de Ingenieria, Universidad de San Carlos de Guatemala
