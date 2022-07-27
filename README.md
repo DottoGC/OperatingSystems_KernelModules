@@ -70,7 +70,7 @@ El monitor de memoria RAM es similar al de CPU, debe mostrar la información del
 
 
 
-#### Proyecto 1 - MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
-#### Sistemas Operativos 1
-#### Escuela de Vacaciones de Junio 2020
-#### Facultad de Ingenieria, Universidad de San Carlos de Guatemala
+Proyecto 1 - MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
+Sistemas Operativos 1
+Escuela de Vacaciones de Junio 2020
+Facultad de Ingenieria, Universidad de San Carlos de Guatemala
