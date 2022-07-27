@@ -1,8 +1,7 @@
-# SO1P1
-Proyecto 1 - MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
-Sistemas Operativos 1
-Escuela de Vacaciones de Junio 2020
-Facultad de Ingenieria, Universidad de San Carlos de Guatemala
+### Proyecto 1 - MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
+#### Sistemas Operativos 1
+#### Escuela de Vacaciones de Junio 2020
+#### Facultad de Ingenieria, Universidad de San Carlos de Guatemala
 
 
 # MODULOS KERNEL, PLANIFICACIÓN DE PROCESOS Y MONITOREO DE RECURSOS
